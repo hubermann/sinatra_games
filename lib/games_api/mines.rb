@@ -1,6 +1,6 @@
 module GamesApi
   class Mines
-    attr_accessor :width, :height, :mines
+    attr_accessor :width, :height, :mines, :local_board
 
     def initialize(width, height, mines)
       @width = width
@@ -13,15 +13,39 @@ module GamesApi
     end
 
     def create_new
-      cols=[]
+      rows=[]
       width.times do
-        cols << create_columns
+        rows << create_columns
+      end
+      self.local_board = rows  #duplicar rows
+      minate
+      #rows
+      local_board
+    end
+
+    def create_columns
+      cols=[]
+      height.times do
+        cols << 'X'
       end
       cols
     end
 
-    def create_columns
-      "x"
+    def minate
+      # a generar en random
+      bombs = [12, 22, 35, 41, 58]
+      iter = 0
+      local_board.each_with_index do |pos, i|
+        pos.each_with_index do |posi, ind|
+          puts_mine(i, ind) if bombs.include? iter
+          iter +=1
+        end
+        iter +=1
+      end
+    end
+
+    def puts_mine(a,b)
+      local_board[a][b] = "B"
     end
 
   end
