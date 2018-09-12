@@ -12,5 +12,17 @@ module GamesApi
       "iniciando nuevo W:#{width} H:#{height} M:#{mines}"
     end
 
+    def create_new
+      cols=[]
+      width.times do
+        cols << create_columns
+      end
+      cols
+    end
+
+    def create_columns
+      "x"
+    end
+
   end
 end

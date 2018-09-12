@@ -12,6 +12,7 @@ module GamesApi
       mines   = params[:mines]  || 5
       game    = Mines.new(width, height, mines)
       game.showmsg.to_json
+      game.create_new.to_json
     end
 
   end
