@@ -10,10 +10,6 @@ module GamesApi
       @local = []
     end
 
-    def showmsg
-      "iniciando nuevo W:#{width} H:#{height} M:#{mines}"
-    end
-
     def create_new
       width.times do
         rows << create_columns
@@ -42,6 +38,12 @@ module GamesApi
         end
         iter +=1
       end
+      #save on BD
+      board = Board.create(
+        :body       => local,
+        :created_at => Time.now
+      )
+      id = board.save
     end
 
     def show_cols
