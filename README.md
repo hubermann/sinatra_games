@@ -1,4 +1,4 @@
-#Juego buscaminas en API.
+# Juego buscaminas en API.
 
 voy a usar Sinatra como entorno (a pesar de no usarlo facil desde hace 6 años, pero me parecia enorme un framework como Rails para algo tan chico)
 
@@ -18,3 +18,5 @@ Deberia tener una ruta donde recibir los parametros a jugar (posicion_row/posici
 Debe marcarse el tiempo de incio del juego. (created_at en BD)
 
 Al usuario se le devuelve un tablero (["x","x","x","x","x"],["x","x","x","x"],["x","x","x","x"]) y el tablero minado se guarda en BD para luego ir comparando.
+
+En el front se reemplazarias por iconos o imagenes cada caracter elegido para funcionalidades EJ: ['X' => 'comun', 'B' => 'Mina', '1' => 'Adyacente' ]
