@@ -13,6 +13,9 @@ module GamesApi
       game    = Mines.new(width, height, mines)
       game.showmsg.to_json
       game.create_new.to_json
+      cols = game.show_cols
+      loc = game.show_local
+      "ORIG: #{cols} \n COPIA: #{loc}"
     end
 
   end
