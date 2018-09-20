@@ -8,6 +8,7 @@ require 'dm-migrations'
 #classes
 require 'games_api/app'
 require 'games_api/mines'
+require 'games_api/minate'
 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/boards.db")
 

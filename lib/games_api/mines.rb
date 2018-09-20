@@ -28,8 +28,7 @@ module GamesApi
     end
 
     def minate
-      # a generar en random
-      bombs = [12, 22, 35, 41, 58]
+      bombs = Minate.new(80, mines).final
       iter = 0
       rows.each_with_index do |pos, i|
         pos.each_with_index do |posi, ind|
